@@ -1,7 +1,7 @@
 # I've joined the #100DaysOfCode Challenge
 
 ## Contents
-* [Projects - click here to see my code projects](Projects)
+* [My Projects](Projects)
 * [Log - click here to see my progress](log.md)
 ##
 * [Rules](rules.md)
