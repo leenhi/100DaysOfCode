@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Challenge Day 2 - Filter List</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    <style>
+        #colorBox {
+            border: 1px solid gray;
+            max-width: 280px;
+            height: 280px;
+            display: block;
+            margin: 12px 0px;
+        }
+        
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+        h4 {
+            padding: 0; margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="leftSection">
+            <h2>Filter List</h2>
+            <br/>
+
+            <!-- Input Search Field -->
+            <input type="tex" id="filterInput" placeholder="Search Names...">
+
+            <br/><br/>
+
+            <!-- List Of Names -->
+            <ul id="names" class="phoneBook withHeader">
+                <li class="phoneBookHeader">
+                    <h4>List Of Names:</h4>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Michael</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">John</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Sarah</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Tom</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Steve</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Kong</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Amy</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Nathan</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Samantha</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Kadence</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Abraham</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Carrie</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Dontaye</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Eupheng</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Frank</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Garry</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Hamline</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Collin</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Jordan</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Marquis</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Maxwell</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Stephanie</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Ethen</a>
+                </li>
+                <li class="listOfNames">
+                    <a href="#">Daniella</a>
+                </li>
+
+        </section>
+
+        <section class="rightSection">
+            <h2>Code Challenge Info:</h2>
+            <p>This features a search that "filters" all the names inside the list(li) and displays the name that matched. The names that don't match will be hidden.</p>
+            <p>- The <em>filter()</em> method creates an array filled with all array elements that pass a test (provided as a function). - <a href="https://www.w3schools.com/">w3Schools.com</a></p>
+            <p>- The <em>toUpperCase()</em> method converts all the alphabetic characters in a string to uppercase. Both the search "input values" and list item "names" were converted to uppercase so that the "strings" have a higher chance of findind a match.</p>
+            <p>- The <em>querySelectoryAll()</em> can select anything based on its class and element name.</p>
+            
+            <br/>
+            <h2>Resource Links:</h2>
+            <ul id="resource_link">
+                <li>Video Tutorial - <a href="https://youtu.be/G1eW3Oi6uoc">Link</a> - Big thanks to Traversy Media</li>
+                <li>filter() - <a href="https://alligator.io/js/filter-array-method/">alligator.io</a>, <a href="https://www.w3schools.com/jsref/jsref_filter.asp">w3schools</a>, <a href="https://codeburst.io/learn-understand-javascripts-filter-function-bde87bce206">codeburst.io</a></li>
+                <li>str.toUpperCase() - <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase">Link</a></li>
+                <li>querySelectoryAll() - <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll">Link</a></li>
+                <li>addEventListener() - <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">Link</a></li>
+            </ul>
+        </section>
+    </div>
+
+
+    <script rel="javascript" type="text/javascript" src="../../assets/js/script.js"></script>
+    <script type="text/javascript">
+        // Filter names by search
+
+        // Assigns filterInput to the input element of #filterInput
+        let filterInput = document.getElementById('filterInput');
+
+
+        // add event listener
+        filterInput.addEventListener('keyup', filterNames);
+
+            function filterNames() {
+                // Get the value of input and turns it into upper case.
+                let filterValue = filterInput.value.toUpperCase();
+
+                // Get ul
+                let ul = document.getElementById('names');
+                // Get li(list items) from ul. The querySelectoryAll() can select anything based on its class name
+                let li = ul.querySelectorAll('li.listOfNames');
+
+                // Loops through li listOfNames
+                for(var i = 0; i < li.length; i++) {
+                    let a = li[i].getElementsByTagName('a')[0];
+
+                    // If input search matched the listOfNames
+                    // The -1 
+                    if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+                        // shows the matched name
+                        // li[i] - means the current iteration/search that we're on
+                        li[i].style.display = '';
+                    } else {
+                        // hide the names that don't match the input search
+                        li[i].style.display = 'none';
+                    }
+
+                }
+
+
+                // console.log(filterValue);
+            }
+
+
+
+        
+    </script>
+</body>
+</html>

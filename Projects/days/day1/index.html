@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Challenge Day 1 - Random Color Generator</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    <style>
+        #colorBox {
+            border: 1px solid gray;
+            max-width: 280px;
+            height: 280px;
+            display: block;
+            margin: 12px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="leftSection">
+            <h2>Random Color Generator</h2>
+
+            <div id="colorBox"><p style="text-align: center;">Click the "Generate Color" button below to get a background color.</p></div>
+            
+            <button id="generateColor">Generate Color</button>
+
+        </section>
+
+        <section class="rightSection">
+            <h2>Code Challenge Info:</h2>
+            <p>I created a div with an id="colorBox". This colorBox will generate a random background color everytime the "Generate Color" button is clicked.</p>
+            
+            <p>- <em>addEventListener()</em> was used to call the function.</p>
+            <p>- There are 0 - 255 hexidecimal colors for RGB(Red, Green, Blue). I created 3 variables from x, y, z. Each of them gets a random number from <em>Math.round( Math.random() * 255 )</em>.</p>
+            <p>- Whenever the "Generate Color" button is clicked, the "colorBox" background is equal to 'rgb(' + x + ',' + y + ',' + z + ')';</p>
+            
+            <br/>
+            <h2>Resource Links:</h2>
+            <ul id="resource_link">
+                <li>Math.Random() - <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random">Link</a></li>
+                <li>Math.Round() - <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round">Link</a></li>
+                <li>addEventListener() - <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">Link</a></li>
+                <li>background: rgb(x, y, z); - <a href="https://www.w3schools.com/cssref/css_colors_legal.asp">Link</a></li>
+            </ul>
+        </section>
+    </div>
+
+
+    <script rel="javascript" type="text/javascript" src="../../assets/js/script.js"></script>
+    <script type="text/javascript">
+        // assign variable "btn" to the id generateColor
+        var btn = document.getElementById("generateColor");
+
+        // create an addEventListener method
+        // when btn is click,the displayColor function below is triggered
+        btn.addEventListener("click", displayColor);
+
+        // displayColor function
+        function displayColor() {
+            // assign x,y,z to a random hexidecimal # out of 255
+            var x = Math.round( Math.random() * 255 );
+            var y = Math.round( Math.random() * 255 );
+            var z = Math.round( Math.random() * 255 );
+
+            // assign variable "bg" to rgb values that spits out x,y,z
+            var bg = 'rgb(' + x + ',' + y + ',' + z + ')';
+            // assign variable "element" to the id colorBox
+            var element = document.getElementById("colorBox");
+
+            // colorBox background style is equal to the random #'s
+            element.style.backgroundColor = bg;
+        };
+
+        /*
+        //This function above works the same as the below
+
+        var btn = document.getElementById("generateColor");
+        btn.addEventListener("click", function displayColor() {
+            var x = Math.round( Math.random() * 255 );
+            var y = Math.round( Math.random() * 255 );
+            var z = Math.round( Math.random() * 255 );
+            var bg = 'rgb(' + x + ',' + y + ',' + z + ')';
+
+            var element = document.getElementById("randomBackground");
+            element.style.backgroundColor = bg;
+
+        });
+
+        //This function above works the same as the below
+        */
+        
+    </script>
+</body>
+</html>

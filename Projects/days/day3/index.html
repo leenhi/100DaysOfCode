@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Challenge Day 3 - Drum Kit</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
+    <style>
+        #colorBox {
+            border: 1px solid gray;
+            max-width: 280px;
+            height: 280px;
+            display: block;
+            margin: 12px 0px;
+        }
+        
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+        h4 {
+            padding: 0; margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="leftSection">
+            <h2>Drum Kit</h2>
+            <br/>
+            
+
+            <div class="keyContainer">
+                <div class="keyPad one">
+                    <audio data-key="65" src="sounds/clap.wav"></audio>
+                </div>
+                <div class="keyPad two">
+                    <audio data-key="65" src="sounds/clap.wav"></audio>
+                </div>
+                <div class="keyPad three">
+                    <audio data-key="65" src="sounds/clap.wav"></audio>
+                </div>
+                <div class="keyPad one">
+                    <audio data-key="65" src="sounds/clap.wav"></audio>
+                </div>
+                <div class="keyPad two">
+                    <audio data-key="65" src="sounds/clap.wav"></audio>
+                </div>
+                <div class="keyPad three">
+                    <audio data-key="65" src="sounds/clap.wav"></audio>
+                </div>
+
+                <!-- Use these audio URL for now -->
+                <!--
+                <audio data-key="65" src="http://katherinekato.com/misc/clap.wav"></audio>
+                <audio data-key="83" src="http://katherinekato.com/misc/hihat.wav"></audio>
+                <audio data-key="68" src="http://katherinekato.com/misc/kick.wav"></audio>
+                <audio data-key="70" src="http://katherinekato.com/misc/openhat.wav"></audio>
+                <audio data-key="71" src="http://katherinekato.com/misc/boom.wav"></audio>
+                <audio data-key="72" src="http://katherinekato.com/misc/ride.wav"></audio>
+                <audio data-key="74" src="http://katherinekato.com/misc/snare.wav"></audio>
+                <audio data-key="75" src="http://katherinekato.com/misc/tom.wav"></audio>
+                <audio data-key="76" src="http://katherinekato.com/misc/tink.wav"></audio>
+                -->
+            </div>
+        </section>
+
+        <section class="rightSection">
+            <h2>Code Challenge Info:</h2>
+            <p>This feature provides Drum Kit sounds that can be played from tapping the keyboard. Each key has a unique number that gets linked to its data attribute.</p>
+            
+            <br/>
+            <h2>Resource Links:</h2>
+            <ul id="resource_link">
+                <li>Video tutorial - <a href="https://youtu.be/VuN8qwZoego">Link</a></li>
+                <li>Blog tutorial - <a href="https://medium.com/@mike_ekkel/javascript-30-day-1-drum-kit-cb3d6e5780ce">Link</a></li>
+                
+            </ul>
+        </section>
+    </div>
+
+
+    <script rel="javascript" type="text/javascript" src="../../assets/js/script.js"></script>
+    <script type="text/javascript">
+        // Drum Kit Script
+
+        window.addEventListener('keydown', playAudio);
+
+        function playAudtion() {
+
+            var keyAduio = document.querySelector('audio');
+
+        };
+
+
+
+        
+    </script>
+</body>
+</html>

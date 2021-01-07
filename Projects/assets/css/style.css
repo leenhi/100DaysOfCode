@@ -1,0 +1,59 @@
+ body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background: gray;
+}
+
+h2 {
+    padding: 0px;
+    margin: 0px;
+    font-size: 18pt;
+}
+
+.container {
+    max-width: 960px;
+    width: 86%;
+    position: relative;
+    margin: 25px auto;
+    padding: 3% 5%;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.leftSection, .rightSection {
+    width: 45%;
+    padding: 2.5%;
+}
+.leftSection {
+    float: left;
+}
+.rightSection {
+    float: left;
+    background: black;
+    color: #ffffff;
+}
+.rightSection a {
+    color: #fff;
+}
+
+.rightSection ul li, .rightSection h2, .rightSection p {
+    color: #ffffff;
+}
+
+
+ul {
+    padding-left: 20px;
+}
+ul li {
+    text-decoration: none;
+    list-style: none;
+    padding: 3px;
+}
+ul li a {
+    color: #000;
+
+}
+ul li a:hover {
+    color: gray;
+        }
